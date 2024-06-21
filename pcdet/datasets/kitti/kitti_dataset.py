@@ -61,7 +61,8 @@ class KittiDataset(DatasetTemplate):
             self.sample_id_list = [x.strip() for x in open(path).readlines()]
 
     def get_lidar(self, idx):
-        lidar_file = self.root_split_path / 'velodyne_reduced' / ('%s.bin' % idx)
+        # lidar_file = self.root_split_path / 'velodyne_reduced' / ('%s.bin' % idx)
+        lidar_file = self.root_split_path / 'velodyne' / ('%s.bin' % idx)
         return self.client.load_to_numpy(str(lidar_file), dtype=np.float32).reshape(-1, 4)
 
     def get_image(self, idx):
@@ -344,7 +345,12 @@ class KittiDataset(DatasetTemplate):
             index = index % len(self.kitti_infos)
 
         info = copy.deepcopy(self.kitti_infos[index])
-
+        # if not self.logger is None:
+        #     self.logger.info('info keys(): ')
+        #     self.logger.info(info)
+        # else:
+        #     pass
+        # print('info keys(): ', info.keys())
         sample_idx = info['point_cloud']['lidar_idx']
         img_shape = info['image']['image_shape']
         calib = self.get_calib(sample_idx)

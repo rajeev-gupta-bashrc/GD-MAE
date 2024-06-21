@@ -12,3 +12,4 @@ venv/
 output
 version.py
 .vscode
+./data

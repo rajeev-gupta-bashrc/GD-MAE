@@ -56,7 +56,13 @@ def parse_config():
 
 def eval_single_ckpt(model, test_loader, args, eval_output_dir, logger, epoch_id, dist_test=False):
     # load checkpoint
-    model.load_params_from_file(filename=args.ckpt, logger=logger, to_cpu=dist_test)
+    absolute_path = args.ckpt
+    if not os.path.isfile(absolute_path):
+        logger.info('No absolute path provided, checking for relative path -> ')
+        current_working_directory = os.getcwd()
+        absolute_path = os.path.abspath(os.path.join(current_working_directory, absolute_path))
+        logger.info('absolute path: %s' % absolute_path)
+    model.load_params_from_file(filename=absolute_path, logger=logger, to_cpu=dist_test)
     model.cuda()
 
     # start evaluation

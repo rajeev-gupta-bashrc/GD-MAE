@@ -10,13 +10,13 @@ do
 done
 echo $PORT
 
-export CUDA_VISIBLE_DEVICES=0,1,2,3
+export CUDA_VISIBLE_DEVICES=0
 
-NGPUS=4
+NGPUS=1
 
-CFG_NAME=kitti_models/graph_rcnn_po
+CFG_NAME=kitti_models/graph_rcnn_voi
 TAG_NAME=default
 
-CKPT=../data/ckpts/graph_rcnn_po.pth
+CKPT=../data/ckpts/graph_rcnn_voi_kitti.pth
 
 python -m torch.distributed.launch --nproc_per_node=${NGPUS} --master_port $PORT test.py --launcher pytorch --cfg_file cfgs/$CFG_NAME.yaml --workers 4 --extra_tag $TAG_NAME --ckpt $CKPT
