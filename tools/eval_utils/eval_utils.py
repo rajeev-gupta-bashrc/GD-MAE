@@ -4,7 +4,7 @@ import time
 import numpy as np
 from pcdet import models
 import torch
-import tqdm
+import tqdm, pickle
 
 from pcdet.models import load_data_to_gpu
 from pcdet.utils import common_utils
@@ -39,6 +39,8 @@ def eval_one_epoch(cfg, model, dataloader, epoch_id, logger, dist_test=False, sa
     det_annos = []
     if fuse_conv_bn:
         model = fusion_utils.fuse_module(model)
+    else:
+        logger.info('fuse_conv_bn is ', fuse_conv_bn)
     logger.info('*************** EPOCH %s EVALUATION *****************' % epoch_id)
     if dist_test:
         num_gpus = torch.cuda.device_count()
@@ -55,6 +57,11 @@ def eval_one_epoch(cfg, model, dataloader, epoch_id, logger, dist_test=False, sa
     start_time = time.time()
     run_time = 0
     for i, batch_dict in enumerate(dataloader):
+        # with open(f'batch_dict_{i}', 'wb') as b_files:
+        #     pickle.dump(batch_dict, b_files)
+        #     logger.info('######################## Dumped batch dict %d' % i)
+        # continue
+    
         torch.cuda.synchronize()
         run_start_time = time.time()
         load_data_to_gpu(batch_dict)
@@ -75,6 +82,8 @@ def eval_one_epoch(cfg, model, dataloader, epoch_id, logger, dist_test=False, sa
         if cfg.LOCAL_RANK == 0:
             progress_bar.set_postfix(disp_dict)
             progress_bar.update()
+
+    # return {}
 
     if cfg.LOCAL_RANK == 0:
         progress_bar.close()

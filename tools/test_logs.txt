@@ -1,0 +1,324 @@
+2024-06-28 16:20:24,594   INFO  Loading KITTI dataset
+2024-06-28 16:20:24,596   INFO  Total samples for KITTI dataset: 51
+2024-06-28 16:20:53,428   INFO  DLASeg is freezed
+2024-06-28 16:20:53,429   INFO  DynVFE is freezed
+2024-06-28 16:20:53,433   INFO  VoxelBackBone8x is freezed
+2024-06-28 16:20:53,434   INFO  HeightCompression is freezed
+2024-06-28 16:20:53,439   INFO  BaseBEVBackbone is freezed
+2024-06-28 16:20:53,440   INFO  AnchorHeadSingle is freezed
+2024-06-29 14:23:43,830   INFO  Loading KITTI dataset
+2024-06-29 14:23:43,831   INFO  Total samples for KITTI dataset: 51
+2024-06-29 14:23:50,246   INFO  DLASeg is freezed
+2024-06-29 14:23:50,246   INFO  DynVFE is freezed
+2024-06-29 14:23:50,247   INFO  VoxelBackBone8x is freezed
+2024-06-29 14:23:50,248   INFO  HeightCompression is freezed
+2024-06-29 14:23:50,249   INFO  BaseBEVBackbone is freezed
+2024-06-29 14:23:50,250   INFO  AnchorHeadSingle is freezed
+2024-06-29 15:09:58,324   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 15:09:58,795   INFO  ==> Done (loaded 518/518)
+2024-06-29 15:13:50,979   INFO  Loading KITTI dataset
+2024-06-29 15:13:50,981   INFO  Total samples for KITTI dataset: 51
+2024-06-29 15:13:53,032   INFO  DLASeg is freezed
+2024-06-29 15:13:53,033   INFO  DynVFE is freezed
+2024-06-29 15:13:53,034   INFO  VoxelBackBone8x is freezed
+2024-06-29 15:13:53,035   INFO  HeightCompression is freezed
+2024-06-29 15:13:53,036   INFO  BaseBEVBackbone is freezed
+2024-06-29 15:13:53,036   INFO  AnchorHeadSingle is freezed
+2024-06-29 15:13:53,042   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 15:13:53,111   INFO  ==> Done (loaded 518/518)
+2024-06-29 15:14:44,076   INFO  Loading KITTI dataset
+2024-06-29 15:14:44,077   INFO  Total samples for KITTI dataset: 51
+2024-06-29 15:14:46,225   INFO  DLASeg is freezed
+2024-06-29 15:14:46,226   INFO  DynVFE is freezed
+2024-06-29 15:14:46,228   INFO  VoxelBackBone8x is freezed
+2024-06-29 15:14:46,228   INFO  HeightCompression is freezed
+2024-06-29 15:14:46,229   INFO  BaseBEVBackbone is freezed
+2024-06-29 15:14:46,230   INFO  AnchorHeadSingle is freezed
+2024-06-29 15:14:46,236   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 15:14:46,305   INFO  ==> Done (loaded 518/518)
+2024-06-29 15:23:27,421   INFO  Loading KITTI dataset
+2024-06-29 15:23:27,422   INFO  Total samples for KITTI dataset: 51
+2024-06-29 15:23:29,482   INFO  DLASeg is freezed
+2024-06-29 15:23:29,482   INFO  DynVFE is freezed
+2024-06-29 15:23:29,483   INFO  VoxelBackBone8x is freezed
+2024-06-29 15:23:29,484   INFO  HeightCompression is freezed
+2024-06-29 15:23:29,485   INFO  BaseBEVBackbone is freezed
+2024-06-29 15:23:29,485   INFO  AnchorHeadSingle is freezed
+2024-06-29 15:23:29,512   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 15:23:29,588   INFO  ==> Done (loaded 518/518)
+2024-06-29 15:25:37,356   INFO  Loading KITTI dataset
+2024-06-29 15:25:37,358   INFO  Total samples for KITTI dataset: 51
+2024-06-29 15:25:43,900   INFO  DLASeg is freezed
+2024-06-29 15:25:43,901   INFO  DynVFE is freezed
+2024-06-29 15:25:43,902   INFO  VoxelBackBone8x is freezed
+2024-06-29 15:25:43,902   INFO  HeightCompression is freezed
+2024-06-29 15:25:43,903   INFO  BaseBEVBackbone is freezed
+2024-06-29 15:25:43,904   INFO  AnchorHeadSingle is freezed
+2024-06-29 15:25:43,928   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 15:25:44,354   INFO  ==> Done (loaded 518/518)
+2024-06-29 15:52:50,471   INFO  Loading KITTI dataset
+2024-06-29 15:52:50,473   INFO  Total samples for KITTI dataset: 51
+2024-06-29 15:52:52,549   INFO  DLASeg is freezed
+2024-06-29 15:52:52,550   INFO  DynVFE is freezed
+2024-06-29 15:52:52,551   INFO  VoxelBackBone8x is freezed
+2024-06-29 15:52:52,551   INFO  HeightCompression is freezed
+2024-06-29 15:52:52,552   INFO  BaseBEVBackbone is freezed
+2024-06-29 15:52:52,552   INFO  AnchorHeadSingle is freezed
+2024-06-29 15:52:52,575   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 15:52:52,646   INFO  ==> Done (loaded 518/518)
+2024-06-29 16:12:28,179   INFO  Loading KITTI dataset
+2024-06-29 16:12:28,181   INFO  Total samples for KITTI dataset: 51
+2024-06-29 16:12:30,321   INFO  DLASeg is freezed
+2024-06-29 16:12:30,322   INFO  DynVFE is freezed
+2024-06-29 16:12:30,323   INFO  VoxelBackBone8x is freezed
+2024-06-29 16:12:30,323   INFO  HeightCompression is freezed
+2024-06-29 16:12:30,325   INFO  BaseBEVBackbone is freezed
+2024-06-29 16:12:30,325   INFO  AnchorHeadSingle is freezed
+2024-06-29 16:24:59,126   INFO  Loading KITTI dataset
+2024-06-29 16:24:59,127   INFO  Total samples for KITTI dataset: 51
+2024-06-29 16:25:01,176   INFO  DLASeg is freezed
+2024-06-29 16:25:01,177   INFO  DynVFE is freezed
+2024-06-29 16:25:01,178   INFO  VoxelBackBone8x is freezed
+2024-06-29 16:25:01,178   INFO  HeightCompression is freezed
+2024-06-29 16:25:01,179   INFO  BaseBEVBackbone is freezed
+2024-06-29 16:25:01,180   INFO  AnchorHeadSingle is freezed
+2024-06-29 16:25:01,277   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 16:25:01,348   INFO  ==> Done (loaded 518/518)
+2024-06-29 16:34:40,758   INFO  Loading KITTI dataset
+2024-06-29 16:34:40,759   INFO  Total samples for KITTI dataset: 51
+2024-06-29 16:34:42,813   INFO  DLASeg is freezed
+2024-06-29 16:34:42,814   INFO  DynVFE is freezed
+2024-06-29 16:34:42,815   INFO  VoxelBackBone8x is freezed
+2024-06-29 16:34:42,816   INFO  HeightCompression is freezed
+2024-06-29 16:34:42,816   INFO  BaseBEVBackbone is freezed
+2024-06-29 16:34:42,817   INFO  AnchorHeadSingle is freezed
+2024-06-29 16:34:42,906   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 16:34:42,982   INFO  ==> Done (loaded 518/518)
+2024-06-29 16:46:24,293   INFO  Loading KITTI dataset
+2024-06-29 16:46:24,294   INFO  Total samples for KITTI dataset: 51
+2024-06-29 16:46:26,369   INFO  DLASeg is freezed
+2024-06-29 16:46:26,370   INFO  DynVFE is freezed
+2024-06-29 16:46:26,371   INFO  VoxelBackBone8x is freezed
+2024-06-29 16:46:26,371   INFO  HeightCompression is freezed
+2024-06-29 16:46:26,373   INFO  BaseBEVBackbone is freezed
+2024-06-29 16:46:26,373   INFO  AnchorHeadSingle is freezed
+2024-06-29 16:46:26,485   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 16:46:26,561   INFO  ==> Done (loaded 518/518)
+2024-06-29 16:48:45,503   INFO  Loading KITTI dataset
+2024-06-29 16:48:45,504   INFO  Total samples for KITTI dataset: 51
+2024-06-29 16:48:47,574   INFO  DLASeg is freezed
+2024-06-29 16:48:47,575   INFO  DynVFE is freezed
+2024-06-29 16:48:47,576   INFO  VoxelBackBone8x is freezed
+2024-06-29 16:48:47,576   INFO  HeightCompression is freezed
+2024-06-29 16:48:47,577   INFO  BaseBEVBackbone is freezed
+2024-06-29 16:48:47,578   INFO  AnchorHeadSingle is freezed
+2024-06-29 16:48:47,680   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 16:48:47,769   INFO  ==> Done (loaded 518/518)
+2024-06-29 17:06:51,237   INFO  Loading KITTI dataset
+2024-06-29 17:06:51,238   INFO  Total samples for KITTI dataset: 51
+2024-06-29 17:06:53,329   INFO  DLASeg is freezed
+2024-06-29 17:06:53,329   INFO  DynVFE is freezed
+2024-06-29 17:06:53,331   INFO  VoxelBackBone8x is freezed
+2024-06-29 17:06:53,331   INFO  HeightCompression is freezed
+2024-06-29 17:06:53,332   INFO  BaseBEVBackbone is freezed
+2024-06-29 17:06:53,332   INFO  AnchorHeadSingle is freezed
+2024-06-29 17:06:53,437   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 17:06:53,527   INFO  ==> Done (loaded 518/518)
+2024-06-29 17:07:49,185   INFO  Loading KITTI dataset
+2024-06-29 17:07:49,186   INFO  Total samples for KITTI dataset: 51
+2024-06-29 17:07:51,233   INFO  DLASeg is freezed
+2024-06-29 17:07:51,233   INFO  DynVFE is freezed
+2024-06-29 17:07:51,235   INFO  VoxelBackBone8x is freezed
+2024-06-29 17:07:51,235   INFO  HeightCompression is freezed
+2024-06-29 17:07:51,236   INFO  BaseBEVBackbone is freezed
+2024-06-29 17:07:51,237   INFO  AnchorHeadSingle is freezed
+2024-06-29 17:07:51,331   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 17:07:51,400   INFO  ==> Done (loaded 518/518)
+2024-06-29 23:31:09,155   INFO  Loading KITTI dataset
+2024-06-29 23:31:09,159   INFO  Total samples for KITTI dataset: 51
+2024-06-29 23:31:21,849   INFO  DLASeg is freezed
+2024-06-29 23:31:21,851   INFO  DynVFE is freezed
+2024-06-29 23:31:21,856   INFO  VoxelBackBone8x is freezed
+2024-06-29 23:31:21,858   INFO  HeightCompression is freezed
+2024-06-29 23:31:21,862   INFO  BaseBEVBackbone is freezed
+2024-06-29 23:31:21,865   INFO  AnchorHeadSingle is freezed
+2024-06-29 23:34:45,941   INFO  Loading KITTI dataset
+2024-06-29 23:34:45,948   INFO  Total samples for KITTI dataset: 51
+2024-06-29 23:34:49,288   INFO  DLASeg is freezed
+2024-06-29 23:34:49,289   INFO  DynVFE is freezed
+2024-06-29 23:34:49,291   INFO  VoxelBackBone8x is freezed
+2024-06-29 23:34:49,292   INFO  HeightCompression is freezed
+2024-06-29 23:34:49,294   INFO  BaseBEVBackbone is freezed
+2024-06-29 23:34:49,294   INFO  AnchorHeadSingle is freezed
+2024-06-29 23:37:52,244   INFO  Loading KITTI dataset
+2024-06-29 23:37:52,247   INFO  Total samples for KITTI dataset: 51
+2024-06-29 23:37:55,639   INFO  DLASeg is freezed
+2024-06-29 23:37:55,640   INFO  DynVFE is freezed
+2024-06-29 23:37:55,643   INFO  VoxelBackBone8x is freezed
+2024-06-29 23:37:55,644   INFO  HeightCompression is freezed
+2024-06-29 23:37:55,646   INFO  BaseBEVBackbone is freezed
+2024-06-29 23:37:55,647   INFO  AnchorHeadSingle is freezed
+2024-06-29 23:37:55,875   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 23:37:56,445   INFO  ==> Done (loaded 518/518)
+2024-06-29 23:39:03,914   INFO  Loading KITTI dataset
+2024-06-29 23:39:03,917   INFO  Total samples for KITTI dataset: 51
+2024-06-29 23:39:07,222   INFO  DLASeg is freezed
+2024-06-29 23:39:07,223   INFO  DynVFE is freezed
+2024-06-29 23:39:07,224   INFO  VoxelBackBone8x is freezed
+2024-06-29 23:39:07,225   INFO  HeightCompression is freezed
+2024-06-29 23:39:07,227   INFO  BaseBEVBackbone is freezed
+2024-06-29 23:39:07,227   INFO  AnchorHeadSingle is freezed
+2024-06-29 23:39:07,398   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 23:39:07,498   INFO  ==> Done (loaded 518/518)
+2024-06-29 23:41:00,198   INFO  Loading KITTI dataset
+2024-06-29 23:41:00,200   INFO  Total samples for KITTI dataset: 51
+2024-06-29 23:41:03,660   INFO  DLASeg is freezed
+2024-06-29 23:41:03,662   INFO  DynVFE is freezed
+2024-06-29 23:41:03,664   INFO  VoxelBackBone8x is freezed
+2024-06-29 23:41:03,665   INFO  HeightCompression is freezed
+2024-06-29 23:41:03,667   INFO  BaseBEVBackbone is freezed
+2024-06-29 23:41:03,668   INFO  AnchorHeadSingle is freezed
+2024-06-29 23:41:03,854   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 23:41:04,018   INFO  ==> Done (loaded 518/518)
+2024-06-29 23:43:07,401   INFO  Loading KITTI dataset
+2024-06-29 23:43:07,404   INFO  Total samples for KITTI dataset: 51
+2024-06-29 23:43:10,776   INFO  DLASeg is freezed
+2024-06-29 23:43:10,777   INFO  DynVFE is freezed
+2024-06-29 23:43:10,779   INFO  VoxelBackBone8x is freezed
+2024-06-29 23:43:10,780   INFO  HeightCompression is freezed
+2024-06-29 23:43:10,782   INFO  BaseBEVBackbone is freezed
+2024-06-29 23:43:10,783   INFO  AnchorHeadSingle is freezed
+2024-06-29 23:43:11,021   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 23:43:11,118   INFO  ==> Done (loaded 518/518)
+2024-06-29 23:44:41,501   INFO  Loading KITTI dataset
+2024-06-29 23:44:41,505   INFO  Total samples for KITTI dataset: 51
+2024-06-29 23:44:44,892   INFO  DLASeg is freezed
+2024-06-29 23:44:44,893   INFO  DynVFE is freezed
+2024-06-29 23:44:44,895   INFO  VoxelBackBone8x is freezed
+2024-06-29 23:44:44,896   INFO  HeightCompression is freezed
+2024-06-29 23:44:44,898   INFO  BaseBEVBackbone is freezed
+2024-06-29 23:44:44,898   INFO  AnchorHeadSingle is freezed
+2024-06-29 23:44:45,092   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-29 23:44:45,194   INFO  ==> Done (loaded 518/518)
+2024-06-30 12:54:49,460   INFO  Loading KITTI dataset
+2024-06-30 12:54:49,462   INFO  Total samples for KITTI dataset: 51
+2024-06-30 12:55:00,683   INFO  DLASeg is freezed
+2024-06-30 12:55:00,686   INFO  DynVFE is freezed
+2024-06-30 12:55:00,701   INFO  VoxelBackBone8x is freezed
+2024-06-30 12:55:00,705   INFO  HeightCompression is freezed
+2024-06-30 12:55:00,714   INFO  BaseBEVBackbone is freezed
+2024-06-30 12:55:00,717   INFO  AnchorHeadSingle is freezed
+2024-06-30 12:55:01,123   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-30 12:55:01,694   INFO  ==> Done (loaded 518/518)
+2024-06-30 13:51:23,267   INFO  Loading KITTI dataset
+2024-06-30 13:51:23,269   INFO  Total samples for KITTI dataset: 51
+2024-06-30 13:51:25,423   INFO  DLASeg is freezed
+2024-06-30 13:51:25,424   INFO  DynVFE is freezed
+2024-06-30 13:51:25,425   INFO  VoxelBackBone8x is freezed
+2024-06-30 13:51:25,426   INFO  HeightCompression is freezed
+2024-06-30 13:51:25,427   INFO  BaseBEVBackbone is freezed
+2024-06-30 13:51:25,427   INFO  AnchorHeadSingle is freezed
+2024-06-30 13:51:25,543   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-30 13:51:25,630   INFO  ==> Done (loaded 518/518)
+2024-06-30 13:51:59,767   INFO  Loading KITTI dataset
+2024-06-30 13:51:59,768   INFO  Total samples for KITTI dataset: 51
+2024-06-30 13:52:01,864   INFO  DLASeg is freezed
+2024-06-30 13:52:01,865   INFO  DynVFE is freezed
+2024-06-30 13:52:01,866   INFO  VoxelBackBone8x is freezed
+2024-06-30 13:52:01,867   INFO  HeightCompression is freezed
+2024-06-30 13:52:01,868   INFO  BaseBEVBackbone is freezed
+2024-06-30 13:52:01,868   INFO  AnchorHeadSingle is freezed
+2024-06-30 13:52:01,971   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-30 13:52:02,066   INFO  ==> Done (loaded 518/518)
+2024-06-30 14:40:10,920   INFO  Loading KITTI dataset
+2024-06-30 14:40:11,023   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:41:19,035   INFO  Loading KITTI dataset
+2024-06-30 14:41:19,035   INFO  Loading KITTI dataset
+2024-06-30 14:41:19,038   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:41:19,038   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:41:58,957   INFO  Loading KITTI dataset
+2024-06-30 14:41:58,957   INFO  Loading KITTI dataset
+2024-06-30 14:41:58,957   INFO  Loading KITTI dataset
+2024-06-30 14:41:58,960   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:41:58,960   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:41:58,960   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:42:44,612   INFO  Loading KITTI dataset
+2024-06-30 14:42:44,621   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:47:23,889   INFO  Loading KITTI dataset
+2024-06-30 14:47:23,889   INFO  Loading KITTI dataset
+2024-06-30 14:47:23,890   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:47:23,890   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:47:44,330   INFO  Loading KITTI dataset
+2024-06-30 14:47:44,331   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:48:31,679   INFO  Loading KITTI dataset
+2024-06-30 14:48:31,680   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:50:27,071   INFO  Loading KITTI dataset
+2024-06-30 14:50:27,072   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:51:50,065   INFO  Loading KITTI dataset
+2024-06-30 14:51:50,067   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:51:56,729   INFO  DLASeg is freezed
+2024-06-30 14:51:56,730   INFO  DynVFE is freezed
+2024-06-30 14:51:56,732   INFO  VoxelBackBone8x is freezed
+2024-06-30 14:51:56,733   INFO  HeightCompression is freezed
+2024-06-30 14:51:56,734   INFO  BaseBEVBackbone is freezed
+2024-06-30 14:51:56,734   INFO  AnchorHeadSingle is freezed
+2024-06-30 14:51:56,908   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-30 14:51:57,360   INFO  ==> Done (loaded 518/518)
+2024-06-30 14:52:18,914   INFO  Loading KITTI dataset
+2024-06-30 14:52:18,915   INFO  Total samples for KITTI dataset: 51
+2024-06-30 14:52:20,911   INFO  DLASeg is freezed
+2024-06-30 14:52:20,911   INFO  DynVFE is freezed
+2024-06-30 14:52:20,913   INFO  VoxelBackBone8x is freezed
+2024-06-30 14:52:20,913   INFO  HeightCompression is freezed
+2024-06-30 14:52:20,914   INFO  BaseBEVBackbone is freezed
+2024-06-30 14:52:20,914   INFO  AnchorHeadSingle is freezed
+2024-06-30 14:52:21,032   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-30 14:52:21,090   INFO  ==> Done (loaded 518/518)
+2024-06-30 19:23:00,569   INFO  DLASeg is freezed
+2024-06-30 19:23:00,573   INFO  DynVFE is freezed
+2024-06-30 19:23:00,581   INFO  VoxelBackBone8x is freezed
+2024-06-30 19:23:00,585   INFO  HeightCompression is freezed
+2024-06-30 19:23:00,594   INFO  BaseBEVBackbone is freezed
+2024-06-30 19:23:00,597   INFO  AnchorHeadSingle is freezed
+2024-06-30 19:26:26,909   INFO  DLASeg is freezed
+2024-06-30 19:26:26,910   INFO  DynVFE is freezed
+2024-06-30 19:26:26,912   INFO  VoxelBackBone8x is freezed
+2024-06-30 19:26:26,913   INFO  HeightCompression is freezed
+2024-06-30 19:26:26,914   INFO  BaseBEVBackbone is freezed
+2024-06-30 19:26:26,915   INFO  AnchorHeadSingle is freezed
+2024-06-30 19:27:23,282   INFO  DLASeg is freezed
+2024-06-30 19:27:23,283   INFO  DynVFE is freezed
+2024-06-30 19:27:23,285   INFO  VoxelBackBone8x is freezed
+2024-06-30 19:27:23,286   INFO  HeightCompression is freezed
+2024-06-30 19:27:23,288   INFO  BaseBEVBackbone is freezed
+2024-06-30 19:27:23,289   INFO  AnchorHeadSingle is freezed
+2024-06-30 19:28:29,101   INFO  DLASeg is freezed
+2024-06-30 19:28:29,102   INFO  DynVFE is freezed
+2024-06-30 19:28:29,104   INFO  VoxelBackBone8x is freezed
+2024-06-30 19:28:29,104   INFO  HeightCompression is freezed
+2024-06-30 19:28:29,107   INFO  BaseBEVBackbone is freezed
+2024-06-30 19:28:29,108   INFO  AnchorHeadSingle is freezed
+2024-06-30 19:32:09,017   INFO  DLASeg is freezed
+2024-06-30 19:32:09,018   INFO  DynVFE is freezed
+2024-06-30 19:32:09,020   INFO  VoxelBackBone8x is freezed
+2024-06-30 19:32:09,021   INFO  HeightCompression is freezed
+2024-06-30 19:32:09,023   INFO  BaseBEVBackbone is freezed
+2024-06-30 19:32:09,024   INFO  AnchorHeadSingle is freezed
+2024-06-30 19:33:41,492   INFO  DLASeg is freezed
+2024-06-30 19:33:41,493   INFO  DynVFE is freezed
+2024-06-30 19:33:41,495   INFO  VoxelBackBone8x is freezed
+2024-06-30 19:33:41,496   INFO  HeightCompression is freezed
+2024-06-30 19:33:41,497   INFO  BaseBEVBackbone is freezed
+2024-06-30 19:33:41,498   INFO  AnchorHeadSingle is freezed
+2024-06-30 19:33:41,836   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-30 19:33:42,379   INFO  ==> Done (loaded 518/518)
+2024-06-30 19:39:54,489   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-30 19:39:54,630   INFO  ==> Done (loaded 518/518)
+2024-06-30 20:15:42,230   INFO  DLASeg is freezed
+2024-06-30 20:15:42,232   INFO  DynVFE is freezed
+2024-06-30 20:15:42,234   INFO  VoxelBackBone8x is freezed
+2024-06-30 20:15:42,235   INFO  HeightCompression is freezed
+2024-06-30 20:15:42,237   INFO  BaseBEVBackbone is freezed
+2024-06-30 20:15:42,238   INFO  AnchorHeadSingle is freezed
+2024-06-30 20:15:42,564   INFO  ==> Loading parameters from checkpoint /home/rajeev-gupta/sensyn_ws/src/GD-MAE/data/ckpts/graph_rcnn_voi_kitti.pth to GPU
+2024-06-30 20:15:43,113   INFO  ==> Done (loaded 518/518)
