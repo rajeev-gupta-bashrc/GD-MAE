@@ -44,7 +44,7 @@ class PointFeatureEncoder(object):
         if points is None:
             num_output_features = len(self.used_feature_list)
             return num_output_features
-
+        # print('*************** points shape before PointFeatureEncoding: ', points.shape)
         point_feature_list = [points[:, 0:3]]
         for x in self.used_feature_list:
             if x in ['x', 'y', 'z']:
@@ -52,4 +52,5 @@ class PointFeatureEncoder(object):
             idx = self.src_feature_list.index(x)
             point_feature_list.append(points[:, idx:idx+1])
         point_features = np.concatenate(point_feature_list, axis=1)
+        # print('*************** point_feature shape after PointFeatureEncoding: ', point_features.shape)
         return point_features, True

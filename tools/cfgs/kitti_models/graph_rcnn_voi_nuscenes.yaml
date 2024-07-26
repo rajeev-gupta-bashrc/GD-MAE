@@ -1,8 +1,8 @@
-CLASS_NAMES: ['Car']
-# CLASS_NAMES: ['Car', 'Pedestrian', 'Cyclist']
+CLASS_NAMES: ['car','truck', 'construction_vehicle', 'bus', 'trailer',
+                 'barrier', 'motorcycle', 'bicycle', 'pedestrian', 'traffic_cone']
 
 DATA_CONFIG: 
-    _BASE_CONFIG_: cfgs/dataset_configs/kitti_dataset.yaml
+    _BASE_CONFIG_: cfgs/dataset_configs/nuscenes_dataset.yaml
     GET_ITEM_LIST: ["points", "image", "calib_matricies", "gt_boxes2d"]
     DATA_AUGMENTOR:
         DISABLE_AUG_LIST: ['placeholder']
@@ -37,17 +37,13 @@ DATA_CONFIG:
 
         - NAME: calculate_grid_size
           VOXEL_SIZE: [0.05, 0.05, 0.1]
-          # VOXEL_SIZE: [0.1, 0.1, 0.2]             #nuscnenes
-          # VOXEL_SIZE: [0.1, 0.1, 0.15]             #GraphRCNN
-
 
         - NAME: imrescale
           IMAGE_SCALES: {
             'train': [[640, 192], [2560, 768]],
             'test': [[1280, 384]]
-            # 'test': [[1920, 1280]]
           }
-          KEEP_RATIO: True
+          KEEP_RATIO: False
 
         - NAME: imflip
           FLIP_RATIO: {
@@ -113,26 +109,6 @@ MODEL:
                 'feature_map_stride': 8,
                 'matched_threshold': 0.6,
                 'unmatched_threshold': 0.45
-            # },
-            # {
-            #     'class_name': 'Pedestrian',
-            #     'anchor_sizes': [[0.8, 0.6, 1.73]],
-            #     'anchor_rotations': [0, 1.57],
-            #     'anchor_bottom_heights': [-1.78],
-            #     'align_center': False,
-            #     'feature_map_stride': 8,
-            #     'matched_threshold': 0.6,
-            #     'unmatched_threshold': 0.45
-            # },
-            # {
-            #     'class_name': 'Cyclist',
-            #     'anchor_sizes': [[1.76, 0.6, 1.73]],
-            #     'anchor_rotations': [0, 1.57],
-            #     'anchor_bottom_heights': [-1.78],
-            #     'align_center': False,
-            #     'feature_map_stride': 8,
-            #     'matched_threshold': 0.6,
-            #     'unmatched_threshold': 0.45
             }
         ]
 
@@ -222,7 +198,6 @@ MODEL:
 
     POST_PROCESSING:
         RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
-        # SCORE_THRESH: 0.01
         SCORE_THRESH: 0.3
         OUTPUT_RAW_SCORE: False
 

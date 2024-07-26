@@ -4,28 +4,45 @@ DATA_PATH: '../data/kitti'
 BACKEND: &BACKEND
   NAME: HardDiskBackend
 
-POINT_CLOUD_RANGE: [0, -40, -3, 70.4, 40, 2]
-# POINT_CLOUD_RANGE: [0, -40, 0, 70.4, 40, 5]
-# POINT_CLOUD_RANGE: [-40, 0, -3, 40, 70.4, 1]                  #defined by me from kitti for ns
-# POINT_CLOUD_RANGE: [-51.2, 0, -5.0, 51.2, 102.4, 5.0]                  #defined by me from ns 
-# POINT_CLOUD_RANGE: [0, -51.2, -5.0, 102.4, 51.2, 5.0]                  #defined by me from ns 
-# POINT_CLOUD_RANGE : [0, -75.2, -2, 150.4, 75.2, 4]             #GraphRCNN
+# POINT_CLOUD_RANGE: [0, -40, -3, 70.4, 40, 1]
+# POINT_CLOUD_RANGE: [-51.2, -51.2, -5.0, 51.2, 51.2, 3.0]    #from nuscenes
+# POINT_CLOUD_RANGE: [-40, 0, -3, 40, 70.4, 1]                  #defined by me from kitti
+# POINT_CLOUD_RANGE: [-51.2, 0, -5.0, 51.2, 51.2, 5.0]                  #defined by me from ns
+POINT_CLOUD_RANGE: [-102.4, 0, -6.0, 102.4, 204.8, 10.0]                  #defined by me from ns
+
+# EGO_AXIS : '
+    
+# for Nuscenes
+
+#                             Front
+
+
+#                         Z   
+#                         |   Y
+#                         |  /
+#                 LEFT    | /                     RIGHT
+#                         |/
+#                         *------------>X
+        
+#                     Back
+        
+        
+# '
+
 
 DATA_SPLIT: {
     'train': train,
-    # 'test': val
-    'test': test
+    'test': val
 }
 
 INFO_PATH: {
-    'train': [kitti_infos_train.pkl],
-    # 'test': [kitti_infos_val.pkl],
-    'test': [kitti_infos_test.pkl],
+    'train': [nuscenes_infos_train.pkl],
+    'test': [nuscenes_infos_val.pkl],
 }
 
 GET_ITEM_LIST: ["points"]
-FOV_POINTS_ONLY: True
-# FOV_POINTS_ONLY: False
+# FOV_POINTS_ONLY: True
+FOV_POINTS_ONLY: False
 ENABLE_SIMILAR_TYPE: True
 
 DATA_AUGMENTOR:
@@ -36,7 +53,7 @@ DATA_AUGMENTOR:
               <<: *BACKEND
           USE_ROAD_PLANE: True
           DB_INFO_PATH:
-              - kitti_dbinfos_train.pkl
+              - nuscenes_dbinfos_train.pkl
           PREPARE: {
              filter_by_min_points: ['Car:5', 'Pedestrian:5', 'Cyclist:5'],
              filter_by_difficulty: [-1],
@@ -78,25 +95,19 @@ DATA_PROCESSOR:
         'test': False
       }
 
-    - NAME: transform_points_to_voxels
-      VOXEL_SIZE: [0.05, 0.05, 0.1]
-      MAX_POINTS_PER_VOXEL: 5
+    # - NAME: transform_points_to_voxels
+    #   VOXEL_SIZE: [0.05, 0.05, 0.1]
+    #   MAX_POINTS_PER_VOXEL: 5
+    #   MAX_NUMBER_OF_VOXELS: {
+    #     'train': 16000,
+    #     'test': 40000
+    #   }
+
+    - NAME: transform_points_to_voxels    #from nuscenes
+      # VOXEL_SIZE: [0.1, 0.1, 0.2]
+      VOXEL_SIZE: [0.2, 0.2, 0.4]
+      MAX_POINTS_PER_VOXEL: 100
       MAX_NUMBER_OF_VOXELS: {
-        'train': 16000,
-        'test': 40000
+        'train': 60000,
+        'test': 60000
       }
-    # - NAME: transform_points_to_voxels    #from nuscenes
-    #   VOXEL_SIZE: [0.1, 0.1, 0.2]
-    #   MAX_POINTS_PER_VOXEL: 10
-    #   MAX_NUMBER_OF_VOXELS: {
-    #     'train': 60000,
-    #     'test': 60000
-    #   }
-    # - NAME: transform_points_to_voxels    #from GraphRCNN
-    #   # VOXEL_SIZE: [0.1, 0.1, 0.2]
-    #   VOXEL_SIZE: [0.1, 0.1, 0.15]
-    #   MAX_POINTS_PER_VOXEL: 10
-    #   MAX_NUMBER_OF_VOXELS: {
-    #     'train': 60000,
-    #     'test': 60000
-    #   }

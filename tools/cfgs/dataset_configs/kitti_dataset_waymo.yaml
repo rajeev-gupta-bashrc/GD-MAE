@@ -4,12 +4,14 @@ DATA_PATH: '../data/kitti'
 BACKEND: &BACKEND
   NAME: HardDiskBackend
 
-POINT_CLOUD_RANGE: [0, -40, -3, 70.4, 40, 2]
-# POINT_CLOUD_RANGE: [0, -40, 0, 70.4, 40, 5]
+# POINT_CLOUD_RANGE: [0, -40, -2, 70.4, 40, 3]
+# POINT_CLOUD_RANGE: [0, -40, 0, 70.4, 40, 5]                  #graphrcnn defined from kitti
 # POINT_CLOUD_RANGE: [-40, 0, -3, 40, 70.4, 1]                  #defined by me from kitti for ns
 # POINT_CLOUD_RANGE: [-51.2, 0, -5.0, 51.2, 102.4, 5.0]                  #defined by me from ns 
 # POINT_CLOUD_RANGE: [0, -51.2, -5.0, 102.4, 51.2, 5.0]                  #defined by me from ns 
-# POINT_CLOUD_RANGE : [0, -75.2, -2, 150.4, 75.2, 4]             #GraphRCNN
+POINT_CLOUD_RANGE : [0, -75.2, -2, 150.4, 75.2, 4]             #GraphRCNN defined
+# POINT_CLOUD_RANGE : [-75.2, -75.2, -2, 75.2, 75.2, 4]             #GraphRCNN original
+
 
 DATA_SPLIT: {
     'train': train,
@@ -24,8 +26,8 @@ INFO_PATH: {
 }
 
 GET_ITEM_LIST: ["points"]
-FOV_POINTS_ONLY: True
 # FOV_POINTS_ONLY: False
+FOV_POINTS_ONLY: True
 ENABLE_SIMILAR_TYPE: True
 
 DATA_AUGMENTOR:
@@ -63,8 +65,10 @@ DATA_AUGMENTOR:
 
 POINT_FEATURE_ENCODING: {
     encoding_type: absolute_coordinates_encoding,
+    # used_feature_list: ['x', 'y', 'z'],
+    # src_feature_list:  ['x', 'y', 'z'],
     used_feature_list: ['x', 'y', 'z', 'intensity'],
-    src_feature_list: ['x', 'y', 'z', 'intensity'],
+    src_feature_list:  ['x', 'y', 'z', 'intensity'],
 }
 
 
@@ -78,25 +82,26 @@ DATA_PROCESSOR:
         'test': False
       }
 
-    - NAME: transform_points_to_voxels
-      VOXEL_SIZE: [0.05, 0.05, 0.1]
+    # - NAME: transform_points_to_voxels
+    #   VOXEL_SIZE: [0.05, 0.05, 0.1]
+    #   MAX_POINTS_PER_VOXEL: 5
+    #   MAX_NUMBER_OF_VOXELS: {
+    #     'train': 16000,
+    #     'test': 40000
+    #   }
+
+    # - NAME: transform_points_to_voxels    #from nuscenes
+    #   # VOXEL_SIZE: [0.1, 0.1, 0.2]
+    #   MAX_POINTS_PER_VOXEL: 10
+    #   MAX_NUMBER_OF_VOXELS: {
+    #     'train': 60000,
+    #     'test': 60000
+    #   }
+
+    - NAME: transform_points_to_voxels    #GraphRCNN
+      VOXEL_SIZE: [0.1, 0.1, 0.15]
       MAX_POINTS_PER_VOXEL: 5
       MAX_NUMBER_OF_VOXELS: {
-        'train': 16000,
-        'test': 40000
+        'train': 150000,
+        'test': 150000
       }
-    # - NAME: transform_points_to_voxels    #from nuscenes
-    #   VOXEL_SIZE: [0.1, 0.1, 0.2]
-    #   MAX_POINTS_PER_VOXEL: 10
-    #   MAX_NUMBER_OF_VOXELS: {
-    #     'train': 60000,
-    #     'test': 60000
-    #   }
-    # - NAME: transform_points_to_voxels    #from GraphRCNN
-    #   # VOXEL_SIZE: [0.1, 0.1, 0.2]
-    #   VOXEL_SIZE: [0.1, 0.1, 0.15]
-    #   MAX_POINTS_PER_VOXEL: 10
-    #   MAX_NUMBER_OF_VOXELS: {
-    #     'train': 60000,
-    #     'test': 60000
-    #   }

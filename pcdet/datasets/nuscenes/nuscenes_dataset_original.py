@@ -6,9 +6,8 @@ import numpy as np
 from tqdm import tqdm
 
 from ...ops.roiaware_pool3d import roiaware_pool3d_utils
-from ...utils import common_utils, file_client, calibration_nuscene
+from ...utils import common_utils, file_client
 from ..dataset import DatasetTemplate
-from ..kitti import kitti_utils
 
 
 class NuScenesDataset(DatasetTemplate):
@@ -26,11 +25,12 @@ class NuScenesDataset(DatasetTemplate):
         nuscenes_infos = []
 
         for info_path in self.dataset_cfg.INFO_PATH[mode]:
-            info_path = self.root_path / 'data/nuscenes' / info_path
+            info_path = self.root_path / info_path
             if not self.client.exists(info_path):
                 continue
             infos = self.client.load_pickle(info_path, True)
-            nuscenes_infos.extend(infos['infos'])
+            print(infos)
+            nuscenes_infos.extend(infos)
 
         self.infos.extend(nuscenes_infos)
         self.logger.info('Total samples for NuScenes dataset: %d' % (len(nuscenes_infos)))
@@ -77,134 +77,55 @@ class NuScenesDataset(DatasetTemplate):
             mask = ~((np.abs(points[:, 0]) < center_radius) & (np.abs(points[:, 1]) < center_radius))
             return points[mask]
 
-        lidar_path = self.root_path / sweep_info['data_path']
+        lidar_path = self.root_path / sweep_info['lidar_path']
         points_sweep = self.client.load_to_numpy(str(lidar_path), dtype=np.float32).reshape([-1, 5])[:, :4]
         points_sweep = remove_ego_points(points_sweep).T
-        
-        transform_matrix = np.eye(4)
-        transform_matrix[:3, :3] = sweep_info['sensor2lidar_rotation']
-        transform_matrix[:3, 3] = sweep_info['sensor2lidar_translation']
-        sweep_info['transform_matrix'] = transform_matrix
         if sweep_info['transform_matrix'] is not None:
             num_points = points_sweep.shape[1]
             points_sweep[:3, :] = sweep_info['transform_matrix'].dot(
                 np.vstack((points_sweep[:3, :], np.ones(num_points))))[:3, :]
 
-        cur_times = sweep_info['timestamp'] * np.ones((1, points_sweep.shape[1]))
+        cur_times = sweep_info['time_lag'] * np.ones((1, points_sweep.shape[1]))
         return points_sweep.T, cur_times.T
-
-    @staticmethod
-    def get_fov_flag(pts_rect, img_shape, calib):
-        """
-        Args:
-            pts_rect:
-            img_shape:
-            calib:
-
-        Returns:
-
-        """
-        pts_img, pts_rect_depth = calib.rect_to_img(pts_rect)
-        val_flag_1 = np.logical_and(pts_img[:, 0] >= 0, pts_img[:, 0] < img_shape[1])
-        val_flag_2 = np.logical_and(pts_img[:, 1] >= 0, pts_img[:, 1] < img_shape[0])
-        val_flag_merge = np.logical_and(val_flag_1, val_flag_2)
-        pts_valid_flag = np.logical_and(val_flag_merge, pts_rect_depth >= 0)
-
-        return pts_valid_flag
 
     def get_lidar_with_sweeps(self, index, max_sweeps=1):
         info = self.infos[index]
         lidar_path = self.root_path / info['lidar_path']
         points = self.client.load_to_numpy(str(lidar_path), dtype=np.float32).reshape([-1, 5])[:, :4]
 
-        # sweep_points_list = [points]
-        # sweep_times_list = [np.zeros((points.shape[0], 1))]
+        sweep_points_list = [points]
+        sweep_times_list = [np.zeros((points.shape[0], 1))]
 
-        # for k in np.random.choice(len(info['sweeps']), max_sweeps - 1, replace=False):
-        #     points_sweep, times_sweep = self.get_sweep(info['sweeps'][k])
-        #     sweep_points_list.append(points_sweep)
-        #     sweep_times_list.append(times_sweep)
+        for k in np.random.choice(len(info['sweeps']), max_sweeps - 1, replace=False):
+            points_sweep, times_sweep = self.get_sweep(info['sweeps'][k])
+            sweep_points_list.append(points_sweep)
+            sweep_times_list.append(times_sweep)
 
-        # points = np.concatenate(sweep_points_list, axis=0)
-        # times = np.concatenate(sweep_times_list, axis=0).astype(points.dtype)
+        points = np.concatenate(sweep_points_list, axis=0)
+        times = np.concatenate(sweep_times_list, axis=0).astype(points.dtype)
 
-        # points = np.concatenate((points, times), axis=1)
+        points = np.concatenate((points, times), axis=1)
         return points
-    
-    def get_image(self, idx):
-        info = self.infos[idx]
-        img_file = self.root_path / info['cams']['CAM_FRONT']['data_path']
-        assert self.client.exists(img_file)
-        return self.client.load_img(str(img_file)).astype(np.float32)  # BGR, uint8
-
-    def get_image_shape(self, idx):
-        info = self.infos[idx]
-        img_file = self.root_path / info['cams']['CAM_FRONT']['data_path']
-        assert self.client.exists(img_file)
-        return np.array(self.client.load_img(str(img_file)).shape[:2], dtype=np.int32)
 
     def __len__(self):
         if self._merge_all_iters_to_one_epoch:
             return len(self.infos) * self.total_epochs
 
         return len(self.infos)
-    def get_calib(self, index):
-        # Ref: https://chatgpt.com/c/004a304d-7667-4b72-bf56-1c1f24caf7a8 https://www.cvlibs.net/publications/Geiger2013IJRR.pdf
-        info = self.infos[index]
-        cam_front = info['cams']['CAM_FRONT']
-        s2e_t = cam_front['sensor2ego_translation']
-        s2e_r = cam_front['sensor2ego_rotation']
-        e2g_t = cam_front['ego2global_translation']
-        e2g_r = cam_front['ego2global_rotation']
-        s2l_t = cam_front['sensor2lidar_translation']
-        s2l_r = cam_front['sensor2lidar_rotation']
-        cam_intr = cam_front['cam_intrinsic']
-        # Tr_velo_to_cam
-        sensor2lidar_transform = np.eye(4)
-        sensor2lidar_transform[:3, :3] = s2l_r
-        sensor2lidar_transform[:3, 3] = s2l_t
-        lidar2sensor_transform = np.linalg.inv(sensor2lidar_transform)
-        #P2
-        l2s_t = lidar2sensor_transform[:3, 3].reshape(3, 1)
-        P2 = np.hstack((cam_intr, l2s_t))
-        #R0
-        R0 = np.eye(3)
-        #calib
-        calib_dict = {
-            'P2': P2,
-            'R0': R0,
-            'Tr_velo2cam': lidar2sensor_transform[:3, :]
-        }
-        print(calib_dict)
-        return calibration_nuscene.Calibration(calib_dict)
-        
+
     def __getitem__(self, index):
         if self._merge_all_iters_to_one_epoch:
             index = index % len(self.infos)
 
         info = copy.deepcopy(self.infos[index])
         points = self.get_lidar_with_sweeps(index, max_sweeps=self.dataset_cfg.MAX_SWEEPS)
-        image = self.get_image(index)
-        img_shape = self.get_image_shape(index)
-        
+
         input_dict = {
             'points': points,
             'frame_id': Path(info['lidar_path']).stem,
-            'metadata': {'token': info['token']},
-            'image' : image
+            'metadata': {'token': info['token']}
         }
-        #user defined
-        calib = self.get_calib(index)
 
-        # if self.dataset_cfg.FOV_POINTS_ONLY:
-        pts_rect = calib.lidar_to_rect(points[:, 0:3])
-        fov_flag = self.get_fov_flag(pts_rect, img_shape, calib)
-        points = points[fov_flag]
-        input_dict['points'] = points
-        
-        # if "calib_matricies" in get_item_list:
-        input_dict["trans_lidar_to_cam"], input_dict["trans_cam_to_img"] = kitti_utils.calib_to_matricies(calib)
-        
         if 'gt_boxes' in info:
             if self.dataset_cfg.get('FILTER_MIN_POINTS_IN_GT', False):
                 mask = (info['num_lidar_pts'] > self.dataset_cfg.FILTER_MIN_POINTS_IN_GT - 1)
@@ -226,7 +147,6 @@ class NuScenesDataset(DatasetTemplate):
         if not self.dataset_cfg.PRED_VELOCITY and 'gt_boxes' in data_dict:
             data_dict['gt_boxes'] = data_dict['gt_boxes'][:, [0, 1, 2, 3, 4, 5, 6, -1]]
 
-        data_dict['image_shape'] = img_shape
         return data_dict
 
     @staticmethod

@@ -1,7 +1,7 @@
 DATASET: 'NuScenesDataset'
 DATA_PATH: '../data/nuscenes'
 
-VERSION: 'v1.0-mini'
+VERSION: 'v1.0-trainval'
 MAX_SWEEPS: 10
 PRED_VELOCITY: True
 SET_NAN_VELOCITY_TO_ZEROS: True
@@ -16,8 +16,8 @@ DATA_SPLIT: {
 }
 
 INFO_PATH: {
-    'train': [nuscenes_infos_train.pkl],
-    'test': [nuscenes_infos_val.pkl],
+    'train': [nuscenes_infos_10sweeps_train.pkl],
+    'test': [nuscenes_infos_10sweeps_val.pkl],
 }
 
 POINT_CLOUD_RANGE: [-51.2, -51.2, -5.0, 51.2, 51.2, 3.0]
@@ -31,7 +31,7 @@ DATA_AUGMENTOR:
           BACKEND:
               <<: *BACKEND
           DB_INFO_PATH:
-              - nuscenes_dbinfos_train.pkl
+              - nuscenes_dbinfos_10sweeps_withvelo.pkl
           PREPARE: {
              filter_by_min_points: [
                  'car:5','truck:5', 'construction_vehicle:5', 'bus:5', 'trailer:5',
