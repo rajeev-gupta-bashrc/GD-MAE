@@ -155,3 +155,13 @@ This project is mainly based on the following codebases. Thanks for their great 
 * [SST](https://github.com/tusen-ai/SST)
 * [ONCE_Benchmark](https://github.com/PointsCoder/Once_Benchmark)
 * [SASA](https://github.com/blakechen97/SASA)
+
+
+## Add-ons:
+
+Python notebooks for testing the models:
+tools/test.ipynb: Notebook to test the model GraphVoI, using kitti dataset. It includes a custom kitti dataset class, can be configured to input data from other sources without using the infos pkl files for the dataset. 
+
+tools/test_nuscenes_kitti.ipynb: testing and visualisation nuscenes dataset via converting it to kitti dataset format.
+
+tools/test_waymo_kitti.ipynb: testing and visualisation waymo dataset via converting it to kitti dataset format.
